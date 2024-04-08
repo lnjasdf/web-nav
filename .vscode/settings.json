@@ -4,5 +4,8 @@
         "nuxt",
         "nuxtjs",
         "tailwindcss"
+    ],
+    "i18n-ally.localesPaths": [
+        "locales"
     ]
 }

@@ -2,7 +2,6 @@
 
 <template>
   <div>
-    <Icon name="uil:github" color="black" />
     <div class="bg-slate-400">aa</div>
   </div>
 </template>
