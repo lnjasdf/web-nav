@@ -2,6 +2,7 @@
 
 <template>
   <div>
+    <SearchBar></SearchBar>
     <NavList></NavList>
   </div>
 </template>
