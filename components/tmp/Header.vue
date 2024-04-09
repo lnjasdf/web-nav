@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    <NavList></NavList>
-  </div>
+  <div>header</div>
 </template>
 
 <style lang="scss" scoped></style>

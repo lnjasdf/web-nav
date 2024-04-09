@@ -1,9 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
+  <TmpHeader />
   <div>
-    <NavList></NavList>
+    <slot></slot>
   </div>
+  <TmpFooter />
 </template>
 
 <style lang="scss" scoped></style>
