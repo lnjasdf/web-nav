@@ -4,7 +4,8 @@
         "daisyui",
         "nuxt",
         "nuxtjs",
-        "tailwindcss"
+        "tailwindcss",
+        "vueuse"
     ],
     "i18n-ally.localesPaths": [
         "locales"
