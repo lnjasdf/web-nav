@@ -1,11 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const openDrawer = useOpenDrawer();
+const open = ref()
+</script>
 
 <template>
   <div class="drawer md:drawer-open">
-    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" v-model="openDrawer" />
     <div class="drawer-content">
       <!-- Page content here -->
-      <label for="my-drawer" class="btn btn-primary drawer-button lg:hidden"
+      <label for="my-drawer" class="btn btn-primary drawer-button md:hidden"
         >Open drawer</label
       >
       <TmpHeader />
