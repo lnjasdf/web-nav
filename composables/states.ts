@@ -3,5 +3,5 @@ export const useOpenDrawer = () => {
 };
 
 export const useLargeDrawer = () => {
-  return useState<boolean>("largeDrawer", () => true);
+  return useState<boolean>("largeDrawer", () => false);
 };

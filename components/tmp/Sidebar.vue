@@ -1,22 +1,39 @@
 <script setup lang="ts">
-// const props = withDefaults(defineProps<{ small: string, large: string}>(), {
-//   small: 'w-16',
-//   large: 'w-52'
-// });
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
 const largeDrawer = useLargeDrawer();
 const drawerState = ref("");
-watch(largeDrawer, (newValue) => {
-  console.log("largeDrawer", newValue);
-  if (newValue) {
+watch(
+  breakpoints.active(),
+  (active) => {
+    switch (active) {
+      case "md":
+        drawerState.value = "w-14";
+        largeDrawer.value = false;
+        break;
+      case "lg":
+        drawerState.value = "w-52";
+        largeDrawer.value = true;
+        break;
+      default:
+        drawerState.value = "w-52";
+        largeDrawer.value = true;
+    }
+  },
+  { immediate: true }
+);
+watch(largeDrawer, (large) => {
+  if (large) {
     drawerState.value = "w-52";
   } else {
-    drawerState.value = "";
+    drawerState.value = "w-14";
   }
 });
 </script>
 
 <template>
-  <div class="md:w-14 lg:w-52 min-h-full bg-base-200" :class="drawerState">
+  <div class="min-h-full bg-base-200" :class="drawerState">
     <ul class="menu p-4 text-base-content">
       <!-- Sidebar content here -->
       <li><a>Sidebar Item 1</a></li>
