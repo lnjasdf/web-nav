@@ -2,32 +2,35 @@
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
-const largeDrawer = useLargeDrawer();
+const smallDrawer = useSmallDrawer();
 const drawerState = ref("");
 watch(
   breakpoints.active(),
   (active) => {
     switch (active) {
-      case "md":
-        drawerState.value = "w-14";
-        largeDrawer.value = false;
+      case "2xl":
+      case "xl":
         break;
       case "lg":
+        drawerState.value = smallDrawer.value ? "w-14" : "w-52";
+        break;
+      case "md":
+        drawerState.value = "w-14";
+        break;
+      case "sm":
         drawerState.value = "w-52";
-        largeDrawer.value = true;
         break;
       default:
         drawerState.value = "w-52";
-        largeDrawer.value = true;
     }
   },
   { immediate: true }
 );
-watch(largeDrawer, (large) => {
-  if (large) {
-    drawerState.value = "w-52";
-  } else {
+watch(smallDrawer, (small) => {
+  if (small) {
     drawerState.value = "w-14";
+  } else {
+    drawerState.value = "w-52";
   }
 });
 </script>

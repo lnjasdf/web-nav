@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const largeDrawer = useLargeDrawer();
+const smallDrawer = useSmallDrawer();
 const openDrawer = useOpenDrawer();
 </script>
 
@@ -11,8 +11,8 @@ const openDrawer = useOpenDrawer();
     <button @click="openDrawer = !openDrawer" class="btn btn-primary">
       openDrawer
     </button>
-    <button @click="largeDrawer = !largeDrawer" class="btn btn-primary">
-      largeDrawer
+    <button @click="smallDrawer = !smallDrawer" class="btn btn-primary">
+      smallDrawer
     </button>
     <NavCard></NavCard>
     <NavCard></NavCard>
