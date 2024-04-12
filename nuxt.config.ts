@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxtjs/i18n", "@vueuse/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-icon",
+    "@nuxtjs/i18n",
+    "@vueuse/nuxt",
+    "@nuxt/image"
+  ],
   devtools: { enabled: true },
   i18n: {
     locales: [

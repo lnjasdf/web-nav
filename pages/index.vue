@@ -3,7 +3,7 @@
 <template>
   <div>
     <SearchBar></SearchBar>
-    <NavList></NavList>
+    <NavContent></NavContent>
   </div>
 </template>
 
