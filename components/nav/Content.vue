@@ -5,7 +5,7 @@ const typedData: IGroup[] = navData;
 </script>
 
 <template>
-  <div>
+  <div class=" m-4">
     <NavGroup v-for="(item,index) in typedData" :key="index" :data="item"></NavGroup>
   </div>
 </template>
