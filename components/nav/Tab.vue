@@ -42,4 +42,8 @@ function handleTabClick(index: number) {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" module>
+.tab-active {
+  background-color: aqua;
+}
+</style>
