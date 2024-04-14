@@ -7,7 +7,7 @@ const iconSize = ref(40);
 </script>
 
 <template>
-  <div class="grid grid-cols-[auto_1fr]  bg-red-100">
+  <div class="grid grid-cols-[auto_1fr] bg-red-100">
     <div class="grid place-items-center">
       <NuxtImg
         :src="data.icon.trim().length > 0 ? data.icon : '/icons/default.svg'"

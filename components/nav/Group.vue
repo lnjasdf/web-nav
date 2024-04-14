@@ -7,7 +7,8 @@ const props = defineProps<{
 
 <template>
   <div>
-    <NavTab :data="props.data.tab_list" :group-name="data.group_name"></NavTab>
+    <h4>{{ data.group_name }}</h4>
+    <NavTab :data="props.data.tab_list"></NavTab>
   </div>
 </template>
 

@@ -2,27 +2,27 @@
 import { type ITab } from "@/interface/nav";
 const props = defineProps<{
   data: ITab[];
-  groupName: string
 }>();
+const tabShowed = ref(0);
+function handleTabClick(index: number) {
+  tabShowed.value = index;
+}
 </script>
 
 <template>
   <div>
-    <div v-for="(tab, index) in props.data" :key="index">
-      <div>
-        <h4 class=" inline">{{ groupName }}</h4>
-        {{ tab.tab_name }}
-      </div>
-      <div
+    <div role="tablist" class="tabs justify-start my-2">
+      <a v-for="(tab, index) in props.data" :key="index" role="tab" class="tab" @click="handleTabClick(index)">{{ tab.tab_name }}</a>
+    </div>
+    <div
         class="grid gap-4 justify-items-stretch grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
       >
         <NavCard
-          v-for="(detail, index) in tab.details"
+          v-for="(detail, index) in data[tabShowed].details"
           :key="index"
           :data="detail"
         ></NavCard>
       </div>
-    </div>
   </div>
 </template>
 
