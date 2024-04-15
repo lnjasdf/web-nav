@@ -4,16 +4,9 @@ const props = defineProps<{
   data: ITab[];
 }>();
 const tabShowed = ref(0);
-const tabsState = ref(
-  Array.from({ length: props.data.length }, (ele, index) =>
-    index === 0 ? true : false
-  )
-);
 function handleTabClick(index: number) {
   tabShowed.value = index;
-  for (let i = 0; i < tabsState.value.length; i++) {
-    i === index ? (tabsState.value[i] = true) : (tabsState.value[i] = false);
-  }
+
 }
 </script>
 
@@ -26,7 +19,7 @@ function handleTabClick(index: number) {
         role="tab"
         class="tab"
         @click="handleTabClick(index)"
-        :class="{ 'tab-active': tabsState[index] }"
+        :class="{ 'tab-active': index === tabShowed }"
         >{{ tab.tab_name }}</a
       >
     </div>
