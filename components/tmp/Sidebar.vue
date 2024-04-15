@@ -37,11 +37,7 @@ watch(smallDrawer, (small) => {
 
 <template>
   <div class="min-h-full bg-base-200" :class="drawerState">
-    <ul class="menu p-4 text-base-content">
-      <!-- Sidebar content here -->
-      <li><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-    </ul>
+    <SidebarContent :isSmall="smallDrawer"/>
   </div>
 </template>
 
