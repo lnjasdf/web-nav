@@ -19,25 +19,39 @@ function handleMenuClick(index: number) {
 <template>
   <div>
     <ul
-      class="menu bg-base-200 w-48 rounded-box"
+      class="bg-base-200 rounded-box"
+      :class="{
+        menu: !isSmall,
+      }"
       v-for="(item, index) in typedData"
       :key="index"
     >
-      <li>
+      <li
+        :class="{
+          'dropdown dropdown-hover dropdown-right': isSmall,
+        }"
+      >
         <span
-          class="menu-dropdown-toggle"
           :class="{
-            'menu-dropdown-show': index === menuOpened,
+            'menu-dropdown-show': index === menuOpened && !isSmall,
+            'menu-dropdown-toggle': !isSmall,
           }"
           @click="handleMenuClick(index)"
-          >{{ item.group_name }}</span
         >
+          <Icon name="i-mdi:account-box-outline" size="30" />
+          <p v-show="!isSmall">{{ item.group_name }}</p>
+        </span>
         <ul
-          class="menu-dropdown"
           :class="{
-            'menu-dropdown-show': index === menuOpened,
+            'menu-dropdown-show': index === menuOpened && !isSmall,
+            'menu-dropdown': !isSmall,
+            'dropdown-content menu shadow bg-base-100 p-0 rounded-box w-52 overflow-hidden':
+              isSmall,
           }"
         >
+          <li class="bg-slate-300" v-show="isSmall">
+            <a>{{ item.group_name }}</a>
+          </li>
           <li v-for="(tab, index) in item.tab_list" :key="index">
             <a>{{ tab.tab_name }}</a>
           </li>
@@ -47,4 +61,4 @@ function handleMenuClick(index: number) {
   </div>
 </template>
 
-<style lang="scss" module></style>
+<style lang="scss" scoped></style>

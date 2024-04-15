@@ -17,7 +17,7 @@ const open = ref()
       </div>
       <TmpFooter />
     </div>
-    <div class="drawer-side">
+    <div id="drawerSide" class="drawer-side">
       <label
         for="my-drawer"
         aria-label="close sidebar"
@@ -28,4 +28,12 @@ const open = ref()
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.md\:drawer-open > .drawer-side {
+  // TODO 按理说在侧边栏标签里加上 overflow-x-visible 就行，
+  // 侧边栏里面的内容就可以使用 dropdown 相关的弹出来，
+  // class="drawer-side overflow-x-visible"
+  // 但这里不行，所以只能用这个 hack 了
+  overflow: visible;
+}
+</style>

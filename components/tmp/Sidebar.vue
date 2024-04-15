@@ -36,10 +36,7 @@ watch(smallDrawer, (small) => {
 </script>
 
 <template>
-  <div
-    class="min-h-full bg-base-200"
-    :class="drawerIsSmall ? 'w-14' : 'w-52'"
-  >
+  <div class="min-h-full bg-base-200" :class="drawerIsSmall ? 'w-14' : 'w-52'">
     <SidebarContent :isSmall="drawerIsSmall" />
   </div>
 </template>
