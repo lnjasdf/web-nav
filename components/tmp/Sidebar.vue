@@ -3,7 +3,7 @@ import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
 const smallDrawer = useSmallDrawer();
-const drawerState = ref("");
+const drawerIsSmall = ref(false);
 watch(
   breakpoints.active(),
   (active) => {
@@ -12,32 +12,35 @@ watch(
       case "xl":
         break;
       case "lg":
-        drawerState.value = smallDrawer.value ? "w-14" : "w-52";
+        drawerIsSmall.value = smallDrawer.value ? true : false;
         break;
       case "md":
-        drawerState.value = "w-14";
+        drawerIsSmall.value = true;
         break;
       case "sm":
-        drawerState.value = "w-52";
+        drawerIsSmall.value = false;
         break;
       default:
-        drawerState.value = "w-52";
+        drawerIsSmall.value = false;
     }
   },
   { immediate: true }
 );
 watch(smallDrawer, (small) => {
   if (small) {
-    drawerState.value = "w-14";
+    drawerIsSmall.value = true;
   } else {
-    drawerState.value = "w-52";
+    drawerIsSmall.value = false;
   }
 });
 </script>
 
 <template>
-  <div class="min-h-full bg-base-200" :class="drawerState">
-    <SidebarContent :isSmall="smallDrawer"/>
+  <div
+    class="min-h-full bg-base-200"
+    :class="drawerIsSmall ? 'w-14' : 'w-52'"
+  >
+    <SidebarContent :isSmall="drawerIsSmall" />
   </div>
 </template>
 
