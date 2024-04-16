@@ -1,10 +1,10 @@
 export const API_GET_NAV = '/v1/nav/get'
 export interface ITabDetails {
-	title: string
+	title: string // 1
 	ori_url?: string
 	url: string
-	icon: string
-	description: string
+	icon: string // 1
+	description: string // 1
 	suffix?: boolean
 	is_show?: boolean
 }
@@ -15,19 +15,19 @@ export interface IUpperRightCorner {
 }
 
 export interface ITab {
-	tab_name: string
-	icon?: string
-	bg_color?: string
-	details: ITabDetails[]
-	upper_right_corner?: IUpperRightCorner
+	tab_name: string // 1
+	// icon?: string
+	// bg_color?: string
+	details: ITabDetails[] // 1
+	// upper_right_corner?: IUpperRightCorner
 }
 
 export interface IGroup {
-	group_name: string
-	style: number
-	// style_desc?: string
-	style_des?: string
-	left?: number
-	width?: number
-	tab_list: ITab[]
+	group_name: string // 1
+	// style: number
+	// // style_desc?: string
+	// style_des?: string
+	// left?: number
+	// width?: number
+	tab_list: ITab[] // 1
 }
