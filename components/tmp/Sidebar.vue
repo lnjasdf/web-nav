@@ -1,44 +1,46 @@
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+import { ScreenTypeEnum } from "@/interface/sidebar";
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
 const smallDrawer = useSmallDrawer();
-const drawerIsSmall = ref(false);
+const openDrawer = useOpenDrawer();
+const screenType = useScreenType();
 watch(
   breakpoints.active(),
   (active) => {
     switch (active) {
       case "2xl":
       case "xl":
-        break;
       case "lg":
-        drawerIsSmall.value = smallDrawer.value ? true : false;
+        screenType.value = ScreenTypeEnum.large;
+        smallDrawer.value = false;
+        openDrawer.value = true;
         break;
       case "md":
-        drawerIsSmall.value = true;
+        screenType.value = ScreenTypeEnum.middle;
+        smallDrawer.value = true;
+        openDrawer.value = true;
         break;
       case "sm":
-        drawerIsSmall.value = false;
+        screenType.value = ScreenTypeEnum.small;
+        smallDrawer.value = false;
+        openDrawer.value = false;
         break;
       default:
-        drawerIsSmall.value = false;
+        screenType.value = ScreenTypeEnum.small;
+        smallDrawer.value = false;
+        openDrawer.value = false;
     }
   },
   { immediate: true }
 );
-watch(smallDrawer, (small) => {
-  if (small) {
-    drawerIsSmall.value = true;
-  } else {
-    drawerIsSmall.value = false;
-  }
-});
 </script>
 
 <template>
-  <div class="min-h-full bg-base-200" :class="drawerIsSmall ? 'w-14' : 'w-52'">
-    <SidebarContent :isSmall="drawerIsSmall" />
-  </div>
+  <!-- <div class="min-h-full bg-base-200" :class="smallDrawer ? 'w-14' : 'w-52'"> -->
+  <SidebarContent :isSmall="smallDrawer" />
+  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped></style>

@@ -8,9 +8,6 @@ const open = ref()
     <input id="my-drawer" type="checkbox" class="drawer-toggle" v-model="openDrawer" />
     <div class="drawer-content">
       <!-- Page content here -->
-      <label for="my-drawer" class="btn btn-primary drawer-button md:hidden"
-        >Open drawer</label
-      >
       <TmpHeader />
       <div>
         <slot></slot>
