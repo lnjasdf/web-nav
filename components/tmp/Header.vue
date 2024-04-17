@@ -7,17 +7,7 @@ const ScreenType = useScreenType();
 
 <template>
   <div>
-    <button class="btn" @click="openDrawer = !openDrawer" v-show="ScreenType === ScreenTypeEnum.small">
-      <Icon name="i-heroicons-solid:menu" />
-    </button>
-    <button
-      class="btn"
-      @click="smallDrawer = !smallDrawer"
-      v-show="ScreenType !== ScreenTypeEnum.small"
-    >
-      <Icon name="i-heroicons-solid:menu" v-show="smallDrawer" />
-      <Icon name="i-heroicons-solid:menu-alt-1" v-show="!smallDrawer" />
-    </button>
+    <TmpSideBarToggle />
     header
   </div>
 </template>

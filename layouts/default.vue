@@ -12,6 +12,7 @@ const open = ref()
       <div>
         <slot></slot>
       </div>
+      <TmpWidget />
       <TmpFooter />
     </div>
     <div id="drawerSide" class="drawer-side">
