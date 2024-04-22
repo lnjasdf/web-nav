@@ -24,7 +24,7 @@ function handleTabClick(index: number) {
       >
     </div>
     <div
-      class="grid gap-4 justify-items-stretch grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
+      class="grid gap-7 justify-items-stretch grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
     >
       <NavCard
         v-for="(detail, index) in data[tabShowed].details"

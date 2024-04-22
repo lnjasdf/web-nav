@@ -16,9 +16,9 @@ const iconSize = ref(40);
         class=" object-cover object-center "
       />
     </div>
-    <div class="truncate">
-      <h4 class="truncate">{{ data.title }}</h4>
-      <p class="truncate">{{ data.description }}</p>
+    <div class="truncate text-left">
+      <h4 class="truncate text-sm font-bold">{{ data.title }}</h4>
+      <p class="truncate text-xs font-normal text-gray-500">{{ data.description }}</p>
     </div>
   </div>
 </template>
