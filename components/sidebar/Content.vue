@@ -17,9 +17,9 @@ function handleMenuClick(index: number) {
 </script>
 
 <template>
-  <div class="min-h-full bg-base-200" :class="isSmall ? 'w-14' : 'w-52'">
+  <div class="min-h-full" :class="isSmall ? 'w-14' : 'w-52'">
     <ul
-      class="bg-base-200 rounded-box"
+      class="rounded-box"
       :class="{
         menu: !isSmall,
       }"

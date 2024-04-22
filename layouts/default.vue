@@ -4,9 +4,9 @@ const open = ref()
 </script>
 
 <template>
-  <div class="drawer md:drawer-open">
+  <div class="drawer md:drawer-open bg-neutral-100">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" v-model="openDrawer" />
-    <div class="drawer-content">
+    <div class="drawer-content ">
       <!-- Page content here -->
       <TmpHeader />
       <div>
@@ -15,7 +15,7 @@ const open = ref()
       <TmpWidget />
       <TmpFooter />
     </div>
-    <div id="drawerSide" class="drawer-side">
+    <div id="drawerSide" class="drawer-side ">
       <label
         for="my-drawer"
         aria-label="close sidebar"

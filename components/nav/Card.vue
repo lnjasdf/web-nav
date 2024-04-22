@@ -7,13 +7,13 @@ const iconSize = ref(40);
 </script>
 
 <template>
-  <div class="tooltip tooltip-bottom grid grid-cols-[auto_1fr] bg-red-100" :data-tip="data.description">
-    <div class="grid place-items-center">
+  <div class="tooltip tooltip-bottom grid grid-cols-[auto_1fr] bg-white p-4 rounded" :data-tip="data.description">
+    <div class="grid place-self-center rounded-full overflow-hidden mr-2  bg-green-200 w-10 h-10">
       <NuxtImg
         :src="data.icon.trim().length > 0 ? data.icon : '/icons/default.svg'"
         :width="iconSize"
         :height="iconSize"
-        class=""
+        class=" object-cover object-center "
       />
     </div>
     <div class="truncate">
