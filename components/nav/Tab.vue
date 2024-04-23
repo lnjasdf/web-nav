@@ -15,21 +15,21 @@ function handleTabClick(index: number) {
     <div role="tablist" class="tabs justify-start my-2">
       <a
         v-for="(tab, index) in props.data"
-        :key="index"
+        :key="tab.id"
         role="tab"
         class="tab"
         @click="handleTabClick(index)"
         :class="{ 'tab-active': index === tabShowed }"
-        >{{ tab.tab_name }}</a
+        >{{ tab.title }}</a
       >
     </div>
     <div
       class="grid gap-7 justify-items-stretch grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6"
     >
       <NavCard
-        v-for="(detail, index) in data[tabShowed].details"
-        :key="index"
-        :data="detail"
+        v-for="site in data[tabShowed].sites"
+        :key="site.id"
+        :data="site"
       ></NavCard>
     </div>
   </div>

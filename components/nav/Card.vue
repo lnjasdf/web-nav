@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { type ITabDetails } from "@/interface/nav";
+import { type ISite } from "@/interface/nav";
 const props = defineProps<{
-  data: ITabDetails;
+  data: ISite;
 }>();
 const iconSize = ref(40);
 </script>

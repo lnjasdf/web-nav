@@ -24,7 +24,7 @@ function handleMenuClick(index: number) {
         menu: !isSmall,
       }"
       v-for="(item, index) in typedData"
-      :key="index"
+      :key="item.id"
     >
       <li
         :class="{
@@ -39,7 +39,7 @@ function handleMenuClick(index: number) {
           @click="handleMenuClick(index)"
         >
           <Icon name="i-mdi:account-box-outline" size="30" />
-          <p v-show="!isSmall">{{ item.group_name }}</p>
+          <p v-show="!isSmall">{{ item.title }}</p>
         </span>
         <ul
           :class="{
@@ -50,10 +50,10 @@ function handleMenuClick(index: number) {
           }"
         >
           <li class="bg-slate-300" v-show="isSmall">
-            <a>{{ item.group_name }}</a>
+            <a>{{ item.title }}</a>
           </li>
-          <li v-for="(tab, index) in item.tab_list" :key="index">
-            <a>{{ tab.tab_name }}</a>
+          <li v-for="tab in item.tabs" :key="tab.id">
+            <a>{{ tab.title }}</a>
           </li>
         </ul>
       </li>
