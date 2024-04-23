@@ -6,8 +6,8 @@ const ScreenType = useScreenType();
 </script>
 
 <template>
-  <div class="h-12 md:h-20 ">
-    <TmpSideBarToggle />
+  <div class="h-12 md:h-20 flex flex-wrap content-center">
+    <TmpSideBarToggle class=" w-8 h-8"/>
     header
   </div>
 </template>
