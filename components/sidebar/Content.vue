@@ -16,7 +16,6 @@ function handleMenuClick(index: number) {
 }
 
 function handleTabClick(tab: ITab) {
-  console.log(tab);
   const ele = document.getElementById(tab.id)
   ele?.click()
   ele?.scrollIntoView({ behavior: "smooth" });
