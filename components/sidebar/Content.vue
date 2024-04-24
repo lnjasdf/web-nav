@@ -14,6 +14,13 @@ function handleMenuClick(index: number) {
   }
   //   menuOpened.value = index;
 }
+
+function handleTabClick(tab: ITab) {
+  console.log(tab);
+  const ele = document.getElementById(tab.id)
+  ele?.click()
+  ele?.scrollIntoView({ behavior: "smooth" });
+}
 </script>
 
 <template>
@@ -31,7 +38,8 @@ function handleMenuClick(index: number) {
           'dropdown dropdown-hover dropdown-right': isSmall,
         }"
       >
-        <span
+        <a
+          :href="`#${item.id}`"
           :class="{
             'menu-dropdown-show': index === menuOpened && !isSmall,
             'menu-dropdown-toggle': !isSmall,
@@ -40,7 +48,7 @@ function handleMenuClick(index: number) {
         >
           <Icon name="i-mdi:account-box-outline" size="30" />
           <p v-show="!isSmall">{{ item.title }}</p>
-        </span>
+        </a>
         <ul
           :class="{
             'menu-dropdown-show': index === menuOpened && !isSmall,
@@ -50,10 +58,10 @@ function handleMenuClick(index: number) {
           }"
         >
           <li class="bg-slate-300" v-show="isSmall">
-            <a>{{ item.title }}</a>
+            <a :href="`#${item.id}`">{{ item.title }}</a>
           </li>
           <li v-for="tab in item.tabs" :key="tab.id">
-            <a>{{ tab.title }}</a>
+            <a  @click="handleTabClick(tab)">{{ tab.title }}</a>
           </li>
         </ul>
       </li>

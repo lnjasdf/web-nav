@@ -14,6 +14,7 @@ function handleTabClick(index: number) {
   <div>
     <div role="tablist" class="tabs justify-start my-2">
       <a
+        :id="tab.id"
         v-for="(tab, index) in props.data"
         :key="tab.id"
         role="tab"

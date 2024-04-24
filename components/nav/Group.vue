@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
   <div>
-    <h4 class=" text-base md:text-lg font-medium text-neutral-600">{{ data.title }}</h4>
+    <h4 :id="data.id" class=" text-base md:text-lg font-medium text-neutral-600">{{ data.title }}</h4>
     <NavTab :data="props.data.tabs"></NavTab>
   </div>
 </template>
