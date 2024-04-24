@@ -32,4 +32,8 @@ const iconSize = ref(40);
   </NuxtLink>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.tooltip:before {
+    max-width: 200px
+}
+</style>
