@@ -2,7 +2,7 @@
 
 <template>
   <div class="mx-2">
-    <SearchBar></SearchBar>
+    <SearchBar class="mx-auto max-w-[800px] w-full"></SearchBar>
     <NavContent></NavContent>
   </div>
 </template>
