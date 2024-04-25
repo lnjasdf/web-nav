@@ -1,0 +1,111 @@
+[
+    {
+        "title": "站内",
+        "groups": [
+            {
+                "title": "搜索",
+                "url": "https://www.baidu.com/s?wd={query}"
+            },
+            {
+                "title": "图片",
+                "url": "https://www.baidu.com/s?wd={query} 图片"
+            },
+            {
+                "title": "视频",
+                "url": "https://www.baidu.com/s?wd={query} 视频"
+            }
+        ]
+    },
+    {
+        "title": "搜索",
+        "groups": [
+            {
+                "title": "百度",
+                "url": "https://www.baidu.com/s?wd={query}"
+            },
+            {
+                "title": "谷歌",
+                "url": "https://www.google.com/search?q={query}"
+            },
+            {
+                "title": "必应",
+                "url": "https://cn.bing.com/search?q={query}"
+            },
+            {
+                "title": "搜狗",
+                "url": "https://www.sogou.com/web?query={query}"
+            },
+            {
+                "title": "360",
+                "url": "https://www.so.com/s?q={query}"
+            },
+            {
+                "title": "神马",
+                "url": "https://m.sm.cn/s?q={query}"
+            }
+        ]
+    },
+    {
+        "title": "社区",
+        "groups": [
+            {
+                "title": "知乎",
+                "url": "https://www.zhihu.com/search?type=content&q={query}"
+            },
+            {
+                "title": "豆瓣",
+                "url": "https://www.douban.com/search?q={query}"
+            },
+            {
+                "title": "微博",
+                "url": "https://s.weibo.com/weibo/{query}"
+            },
+            {
+                "title": "贴吧",
+                "url": "https://tieba.baidu.com/f?kw={query}"
+            }
+        ]
+    },
+    {
+        "title": "图片",
+        "groups": [
+            {
+                "title": "百度图片",
+                "url": "https://image.baidu.com/search/index?tn=baiduimage&ie=utf-8&word={query}"
+            },
+            {
+                "title": "谷歌图片",
+                "url": "https://www.google.com/search?tbm=isch&q={query}"
+            },
+            {
+                "title": "必应图片",
+                "url": "https://cn.bing.com/images/search?q={query}"
+            },
+            {
+                "title": "搜狗图片",
+                "url": "https://pic.sogou.com/pics?query={query}"
+            },
+            {
+                "title": "360图片",
+                "url": "https://image.so.com/i?q={query}"
+            },
+            {
+                "title": "神马图片",
+                "url": "https://image.sm.cn/index?q={query}"
+            }
+        ]
+    },
+    {
+        "title": "生活",
+        "groups": [
+            {
+                "title": "快递",
+                "url": "https://www.kuaidi100.com/result?nu={query}"
+            },
+            {
+                "title": "快递100",
+                "url": "https://www.kuaidi100.com/chaxun?com={query}&nu={query}"
+            }
+        ]
+    }
+]
