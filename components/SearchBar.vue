@@ -16,28 +16,29 @@ const handleChangeSite = (index: number) => {
 
 <template>
   <div class="">
-    <ul class="flex justify-center">
-      <li
-        v-for="(item, index) in typeData"
-        :key="index"
-        class="text-sm m-4 text-neutral-500"
-        @click="handleChangeGroup(index)"
-        :class="{ 'border-b-4 border-b-neutral-200': curGroup === index }"
-      >
-        {{ item.title }}
-      </li>
-    </ul>
+    <div class="flex justify-center">
+      <ul class="flex flex-row whitespace-nowrap overflow-x-auto">
+        <li
+          v-for="(item, index) in typeData"
+          :key="index"
+          class="text-sm m-4 text-neutral-500"
+          @click="handleChangeGroup(index)"
+          :class="{ 'border-b-4 border-b-neutral-200': curGroup === index }"
+        >
+          {{ item.title }}
+        </li>
+      </ul>
+    </div>
     <label class="input bg-neutral-200 flex items-center gap-2 rounded-full">
       <input type="text" class="grow" placeholder="Search" />
       <Icon name="i-ri:search-line" size="20" />
     </label>
     <div class="flex justify-center">
-      <!-- TODO overflow-x-auto 不好使，搜索项太多时，横向滚动未生效 -->
-      <ul class="overflow-x-auto">
+      <ul class="flex flex-row whitespace-nowrap overflow-x-auto">
         <li
           v-for="(item, index) in typeData[curGroup].groups"
           :key="index"
-          class="inline-block text-sm m-4 text-neutral-500 relative"
+          class="text-sm m-4 text-neutral-500 relative"
           @click="handleChangeSite(index)"
           :class="{ ' curSite': curSite === index }"
         >
