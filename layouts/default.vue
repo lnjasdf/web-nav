@@ -6,14 +6,14 @@ const open = ref()
 <template>
   <div class="drawer md:drawer-open bg-neutral-50">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" v-model="openDrawer" />
-    <div class="drawer-content ">
+    <div class="drawer-content flex flex-col min-h-full">
       <!-- Page content here -->
       <TmpHeader />
       <div>
         <slot></slot>
       </div>
       <TmpWidget />
-      <TmpFooter />
+      <TmpFooter class="mt-auto"/>
     </div>
     <div id="drawerSide" class="drawer-side ">
       <label
