@@ -38,7 +38,7 @@ function handleTabClick(tab: ITab) {
         }"
       >
         <a
-          :href="`#${item.id}`"
+          :href="`/#${item.id}`"
           :class="{
             'menu-dropdown-show': index === menuOpened && !isSmall,
             'menu-dropdown-toggle': !isSmall,
@@ -57,7 +57,7 @@ function handleTabClick(tab: ITab) {
           }"
         >
           <li class="bg-slate-300" v-show="isSmall">
-            <a :href="`#${item.id}`">{{ item.title }}</a>
+            <a :href="`/#${item.id}`">{{ item.title }}</a>
           </li>
           <li v-for="tab in item.tabs" :key="tab.id">
             <a  @click="handleTabClick(tab)">{{ tab.title }}</a>
