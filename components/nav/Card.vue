@@ -7,7 +7,7 @@ const iconSize = ref(40);
 </script>
 
 <template>
-  <NuxtLink :to="`/sites/${data.id}`" target="blank">
+  <NuxtLink :to="`/sites/${data.id}`" target="_blank">
     <div
       class="tooltip tooltip-bottom grid grid-cols-[auto_1fr] bg-white p-4 rounded"
       :data-tip="data.description"
