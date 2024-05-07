@@ -27,7 +27,8 @@ function handleTabClick(tab: ITab) {
     <ul
       class="rounded-box"
       :class="{
-        menu: !isSmall,
+        'menu': !isSmall,
+        'p-2': isSmall,
       }"
       v-for="(item, index) in typedData"
       :key="item.id"
@@ -35,6 +36,7 @@ function handleTabClick(tab: ITab) {
       <li
         :class="{
           'dropdown dropdown-hover dropdown-right': isSmall,
+          ' w-full hover:bg-[#e4e5e6] hover:rounded-lg h-[46px] flex justify-center items-center': isSmall,
         }"
       >
         <a
