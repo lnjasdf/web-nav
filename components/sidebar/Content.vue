@@ -43,7 +43,7 @@ function handleTabClick(tab: ITab) {
           :href="`/#${item.id}`"
           :class="{
             'menu-dropdown-show': index === menuOpened && !isSmall,
-            'menu-dropdown-toggle': !isSmall,
+            'menu-dropdown-toggle px-2': !isSmall,
           }"
           @click="handleMenuClick(index)"
         >
